@@ -6,6 +6,7 @@ import { Calculator } from './components/exercises/Calculator';
 import { DateManager } from './components/exercises/DateManager';
 import { Database } from './components/exercises/Database';
 import { AdvancedExample } from './components/exercises/AdvancedExample';
+import { PokemonAPI } from './components/exercises/PokemonAPI';
 
 type ActiveComponent =
   | 'home'
@@ -14,7 +15,8 @@ type ActiveComponent =
   | 'calculator'
   | 'dates'
   | 'database'
-  | 'advanced';
+  | 'advanced'
+  | 'pokemon';
 
 function App() {
   const [activeComponent, setActiveComponent] =
@@ -34,6 +36,8 @@ function App() {
         return <Database />;
       case 'advanced':
         return <AdvancedExample />;
+      case 'pokemon':
+        return <PokemonAPI />;
       default:
         return (
           <>
@@ -166,6 +170,15 @@ function App() {
                   style={{ color: 'white', border: 'none', background: 'none' }}
                 >
                   Ejemplo Avanzado
+                </button>
+              </li>
+              <li className="nav-item">
+                <button
+                  className={`nav-link btn btn-link ${activeComponent === 'pokemon' ? 'active' : ''}`}
+                  onClick={() => setActiveComponent('pokemon')}
+                  style={{ color: 'white', border: 'none', background: 'none' }}
+                >
+                  PokéAPI
                 </button>
               </li>
             </ul>
