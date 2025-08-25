@@ -1,0 +1,10 @@
+dist/
+node_modules/
+public/
+*.config.js
+*.config.ts
+build/
+coverage/
+.eslintrc.*
+package-lock.json
+yarn.lock
