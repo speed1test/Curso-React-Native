@@ -3,7 +3,11 @@ import './Arrays.css';
 
 export const Arrays = () => {
   const [numbers, setNumbers] = useState<number[]>([1, 2, 3, 4, 5]);
-  const [fruits, setFruits] = useState<string[]>(['Manzana', 'Plátano', 'Naranja']);
+  const [fruits, setFruits] = useState<string[]>([
+    'Manzana',
+    'Plátano',
+    'Naranja',
+  ]);
   const [newNumber, setNewNumber] = useState<string>('');
   const [newFruit, setNewFruit] = useState<string>('');
   const [results, setResults] = useState<string[]>([]);
@@ -87,23 +91,25 @@ export const Arrays = () => {
   return (
     <div className="arrays-container">
       <h2>Ejercicios con Arrays</h2>
-      
+
       <div className="arrays-display">
         <div className="array-section">
           <h3>Array de Números</h3>
-          <div className="array-content">
-            [{numbers.join(', ')}]
-          </div>
+          <div className="array-content">[{numbers.join(', ')}]</div>
           <div className="array-controls">
             <input
               type="number"
               placeholder="Nuevo número..."
               value={newNumber}
-              onChange={(e) => setNewNumber(e.target.value)}
+              onChange={e => setNewNumber(e.target.value)}
               className="form-control"
             />
-            <button onClick={addNumber} className="btn btn-primary">Agregar</button>
-            <button onClick={removeLastNumber} className="btn btn-danger">Eliminar Último</button>
+            <button onClick={addNumber} className="btn btn-primary">
+              Agregar
+            </button>
+            <button onClick={removeLastNumber} className="btn btn-danger">
+              Eliminar Último
+            </button>
           </div>
         </div>
 
@@ -117,11 +123,15 @@ export const Arrays = () => {
               type="text"
               placeholder="Nueva fruta..."
               value={newFruit}
-              onChange={(e) => setNewFruit(e.target.value)}
+              onChange={e => setNewFruit(e.target.value)}
               className="form-control"
             />
-            <button onClick={addFruit} className="btn btn-primary">Agregar</button>
-            <button onClick={removeLastFruit} className="btn btn-danger">Eliminar Última</button>
+            <button onClick={addFruit} className="btn btn-primary">
+              Agregar
+            </button>
+            <button onClick={removeLastFruit} className="btn btn-danger">
+              Eliminar Última
+            </button>
           </div>
         </div>
       </div>
@@ -129,12 +139,24 @@ export const Arrays = () => {
       <div className="operations-section">
         <h3>Operaciones con Arrays</h3>
         <div className="operation-buttons">
-          <button onClick={calculateSum} className="btn btn-success">Sumar Números</button>
-          <button onClick={findMax} className="btn btn-info">Máximo</button>
-          <button onClick={findMin} className="btn btn-info">Mínimo</button>
-          <button onClick={sortNumbers} className="btn btn-warning">Ordenar Números</button>
-          <button onClick={sortFruits} className="btn btn-warning">Ordenar Frutas</button>
-          <button onClick={filterEvenNumbers} className="btn btn-secondary">Filtrar Pares</button>
+          <button onClick={calculateSum} className="btn btn-success">
+            Sumar Números
+          </button>
+          <button onClick={findMax} className="btn btn-info">
+            Máximo
+          </button>
+          <button onClick={findMin} className="btn btn-info">
+            Mínimo
+          </button>
+          <button onClick={sortNumbers} className="btn btn-warning">
+            Ordenar Números
+          </button>
+          <button onClick={sortFruits} className="btn btn-warning">
+            Ordenar Frutas
+          </button>
+          <button onClick={filterEvenNumbers} className="btn btn-secondary">
+            Filtrar Pares
+          </button>
         </div>
       </div>
 
@@ -151,7 +173,9 @@ export const Arrays = () => {
             ))
           )}
         </div>
-        <button onClick={clearResults} className="btn btn-danger mt-2">Limpiar Resultados</button>
+        <button onClick={clearResults} className="btn btn-danger mt-2">
+          Limpiar Resultados
+        </button>
       </div>
     </div>
   );

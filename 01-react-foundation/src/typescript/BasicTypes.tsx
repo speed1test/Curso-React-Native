@@ -17,5 +17,5 @@ export const BasicTypes = () => {
         <li>null y undefined</li>
       </ul>
     </div>
-  )
-}
+  );
+};

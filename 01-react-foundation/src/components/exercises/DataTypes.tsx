@@ -14,13 +14,17 @@ export const DataTypes = () => {
   const testString = () => {
     const length = stringValue.length;
     const upperCase = stringValue.toUpperCase();
-    addResult(`String: "${stringValue}" - Longitud: ${length} - Mayúsculas: "${upperCase}"`);
+    addResult(
+      `String: "${stringValue}" - Longitud: ${length} - Mayúsculas: "${upperCase}"`
+    );
   };
 
   const testNumber = () => {
     const isEven = numberValue % 2 === 0;
     const squared = numberValue ** 2;
-    addResult(`Número: ${numberValue} - Es par: ${isEven} - Al cuadrado: ${squared}`);
+    addResult(
+      `Número: ${numberValue} - Es par: ${isEven} - Al cuadrado: ${squared}`
+    );
   };
 
   const testBoolean = () => {
@@ -34,17 +38,19 @@ export const DataTypes = () => {
   return (
     <div className="data-types-container">
       <h2>Ejercicios con Tipos de Datos</h2>
-      
+
       <div className="exercise-section">
         <h3>1. Strings</h3>
         <input
           type="text"
           placeholder="Escribe un texto..."
           value={stringValue}
-          onChange={(e) => setStringValue(e.target.value)}
+          onChange={e => setStringValue(e.target.value)}
           className="form-control mb-2"
         />
-        <button onClick={testString} className="btn btn-primary">Probar String</button>
+        <button onClick={testString} className="btn btn-primary">
+          Probar String
+        </button>
       </div>
 
       <div className="exercise-section">
@@ -53,10 +59,12 @@ export const DataTypes = () => {
           type="number"
           placeholder="Escribe un número..."
           value={numberValue}
-          onChange={(e) => setNumberValue(Number(e.target.value))}
+          onChange={e => setNumberValue(Number(e.target.value))}
           className="form-control mb-2"
         />
-        <button onClick={testNumber} className="btn btn-success">Probar Número</button>
+        <button onClick={testNumber} className="btn btn-success">
+          Probar Número
+        </button>
       </div>
 
       <div className="exercise-section">
@@ -65,7 +73,7 @@ export const DataTypes = () => {
           <input
             type="checkbox"
             checked={booleanValue}
-            onChange={(e) => setBooleanValue(e.target.checked)}
+            onChange={e => setBooleanValue(e.target.checked)}
             className="form-check-input"
             id="booleanCheck"
           />
@@ -73,7 +81,9 @@ export const DataTypes = () => {
             Valor Boolean: {booleanValue.toString()}
           </label>
         </div>
-        <button onClick={testBoolean} className="btn btn-warning">Probar Boolean</button>
+        <button onClick={testBoolean} className="btn btn-warning">
+          Probar Boolean
+        </button>
       </div>
 
       <div className="results-section">
@@ -89,7 +99,9 @@ export const DataTypes = () => {
             ))
           )}
         </div>
-        <button onClick={clearResults} className="btn btn-danger mt-2">Limpiar Resultados</button>
+        <button onClick={clearResults} className="btn btn-danger mt-2">
+          Limpiar Resultados
+        </button>
       </div>
     </div>
   );

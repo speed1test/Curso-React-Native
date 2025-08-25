@@ -1,1 +1,1 @@
-export * from './BasicTypes'
+export * from './BasicTypes';

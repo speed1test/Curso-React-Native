@@ -48,7 +48,7 @@ export const Calculator = () => {
 
       setDisplay(String(newValue));
       setPreviousValue(newValue);
-      
+
       // Agregar al historial
       const calculation = `${currentValue} ${operation} ${inputValue} = ${newValue}`;
       addToHistory(calculation);
@@ -58,7 +58,11 @@ export const Calculator = () => {
     setOperation(nextOperation);
   };
 
-  const calculate = (firstValue: number, secondValue: number, operation: string): number => {
+  const calculate = (
+    firstValue: number,
+    secondValue: number,
+    operation: string
+  ): number => {
     switch (operation) {
       case '+':
         return firstValue + secondValue;
@@ -81,7 +85,7 @@ export const Calculator = () => {
     if (previousValue !== null && operation) {
       const newValue = calculate(previousValue, inputValue, operation);
       const calculation = `${previousValue} ${operation} ${inputValue} = ${newValue}`;
-      
+
       addToHistory(calculation);
       setDisplay(String(newValue));
       setPreviousValue(null);
@@ -117,7 +121,7 @@ export const Calculator = () => {
   return (
     <div className="calculator-container">
       <h2>Calculadora Avanzada</h2>
-      
+
       <div className="calculator-layout">
         <div className="calculator">
           <div className="calculator-display">
@@ -130,31 +134,125 @@ export const Calculator = () => {
           </div>
 
           <div className="calculator-buttons">
-            <button onClick={clear} className="btn btn-danger calculator-btn">C</button>
-            <button onClick={handlePercentage} className="btn btn-secondary calculator-btn">%</button>
-            <button onClick={handleSquareRoot} className="btn btn-secondary calculator-btn">√</button>
-            <button onClick={handleSquare} className="btn btn-secondary calculator-btn">x²</button>
+            <button onClick={clear} className="btn btn-danger calculator-btn">
+              C
+            </button>
+            <button
+              onClick={handlePercentage}
+              className="btn btn-secondary calculator-btn"
+            >
+              %
+            </button>
+            <button
+              onClick={handleSquareRoot}
+              className="btn btn-secondary calculator-btn"
+            >
+              √
+            </button>
+            <button
+              onClick={handleSquare}
+              className="btn btn-secondary calculator-btn"
+            >
+              x²
+            </button>
 
-            <button onClick={() => inputNumber('7')} className="btn btn-light calculator-btn">7</button>
-            <button onClick={() => inputNumber('8')} className="btn btn-light calculator-btn">8</button>
-            <button onClick={() => inputNumber('9')} className="btn btn-light calculator-btn">9</button>
-            <button onClick={() => performOperation('/')} className="btn btn-warning calculator-btn">÷</button>
+            <button
+              onClick={() => inputNumber('7')}
+              className="btn btn-light calculator-btn"
+            >
+              7
+            </button>
+            <button
+              onClick={() => inputNumber('8')}
+              className="btn btn-light calculator-btn"
+            >
+              8
+            </button>
+            <button
+              onClick={() => inputNumber('9')}
+              className="btn btn-light calculator-btn"
+            >
+              9
+            </button>
+            <button
+              onClick={() => performOperation('/')}
+              className="btn btn-warning calculator-btn"
+            >
+              ÷
+            </button>
 
-            <button onClick={() => inputNumber('4')} className="btn btn-light calculator-btn">4</button>
-            <button onClick={() => inputNumber('5')} className="btn btn-light calculator-btn">5</button>
-            <button onClick={() => inputNumber('6')} className="btn btn-light calculator-btn">6</button>
-            <button onClick={() => performOperation('*')} className="btn btn-warning calculator-btn">×</button>
+            <button
+              onClick={() => inputNumber('4')}
+              className="btn btn-light calculator-btn"
+            >
+              4
+            </button>
+            <button
+              onClick={() => inputNumber('5')}
+              className="btn btn-light calculator-btn"
+            >
+              5
+            </button>
+            <button
+              onClick={() => inputNumber('6')}
+              className="btn btn-light calculator-btn"
+            >
+              6
+            </button>
+            <button
+              onClick={() => performOperation('*')}
+              className="btn btn-warning calculator-btn"
+            >
+              ×
+            </button>
 
-            <button onClick={() => inputNumber('1')} className="btn btn-light calculator-btn">1</button>
-            <button onClick={() => inputNumber('2')} className="btn btn-light calculator-btn">2</button>
-            <button onClick={() => inputNumber('3')} className="btn btn-light calculator-btn">3</button>
-            <button onClick={() => performOperation('-')} className="btn btn-warning calculator-btn">-</button>
+            <button
+              onClick={() => inputNumber('1')}
+              className="btn btn-light calculator-btn"
+            >
+              1
+            </button>
+            <button
+              onClick={() => inputNumber('2')}
+              className="btn btn-light calculator-btn"
+            >
+              2
+            </button>
+            <button
+              onClick={() => inputNumber('3')}
+              className="btn btn-light calculator-btn"
+            >
+              3
+            </button>
+            <button
+              onClick={() => performOperation('-')}
+              className="btn btn-warning calculator-btn"
+            >
+              -
+            </button>
 
-            <button onClick={() => inputNumber('0')} className="btn btn-light calculator-btn calculator-btn-wide">0</button>
-            <button onClick={inputDot} className="btn btn-light calculator-btn">.</button>
-            <button onClick={() => performOperation('+')} className="btn btn-warning calculator-btn">+</button>
+            <button
+              onClick={() => inputNumber('0')}
+              className="btn btn-light calculator-btn calculator-btn-wide"
+            >
+              0
+            </button>
+            <button onClick={inputDot} className="btn btn-light calculator-btn">
+              .
+            </button>
+            <button
+              onClick={() => performOperation('+')}
+              className="btn btn-warning calculator-btn"
+            >
+              +
+            </button>
 
-            <button onClick={handleEquals} className="btn btn-success calculator-btn calculator-btn-tall">=</button>
+            <button
+              onClick={handleEquals}
+              className="btn btn-success calculator-btn calculator-btn-tall"
+            >
+              =
+            </button>
           </div>
         </div>
 
@@ -171,7 +269,9 @@ export const Calculator = () => {
               ))
             )}
           </div>
-          <button onClick={clearHistory} className="btn btn-danger btn-sm">Limpiar Historial</button>
+          <button onClick={clearHistory} className="btn btn-danger btn-sm">
+            Limpiar Historial
+          </button>
         </div>
       </div>
     </div>
