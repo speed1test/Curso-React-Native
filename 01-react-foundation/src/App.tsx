@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BasicTypes } from './typescript';
+import { BasicTypes, BasicFunctions } from './typescript';
 import { DataTypes } from './components/exercises/DataTypes';
 import { Arrays } from './components/exercises/Arrays';
 import { Calculator } from './components/exercises/Calculator';
@@ -7,9 +7,12 @@ import { DateManager } from './components/exercises/DateManager';
 import { Database } from './components/exercises/Database';
 import { AdvancedExample } from './components/exercises/AdvancedExample';
 import { PokemonAPI } from './components/exercises/PokemonAPI';
+import { UseStateExamples } from './components/exercises/UseStateExamples';
 
 type ActiveComponent =
   | 'home'
+  | 'functions'
+  | 'usestate'
   | 'datatypes'
   | 'arrays'
   | 'calculator'
@@ -24,6 +27,10 @@ function App() {
 
   const renderActiveComponent = () => {
     switch (activeComponent) {
+      case 'functions':
+        return <BasicFunctions />;
+      case 'usestate':
+        return <UseStateExamples />;
       case 'datatypes':
         return <DataTypes />;
       case 'arrays':
@@ -116,6 +123,24 @@ function App() {
                   style={{ color: 'white', border: 'none', background: 'none' }}
                 >
                   Inicio
+                </button>
+              </li>
+              <li className="nav-item">
+                <button
+                  className={`nav-link btn btn-link ${activeComponent === 'functions' ? 'active' : ''}`}
+                  onClick={() => setActiveComponent('functions')}
+                  style={{ color: 'white', border: 'none', background: 'none' }}
+                >
+                  Funciones
+                </button>
+              </li>
+              <li className="nav-item">
+                <button
+                  className={`nav-link btn btn-link ${activeComponent === 'usestate' ? 'active' : ''}`}
+                  onClick={() => setActiveComponent('usestate')}
+                  style={{ color: 'white', border: 'none', background: 'none' }}
+                >
+                  useState
                 </button>
               </li>
               <li className="nav-item">
