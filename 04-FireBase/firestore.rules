@@ -1,0 +1,34 @@
+// Reglas de seguridad para Firestore
+// Copiar y pegar en Firebase Console → Firestore Database → Reglas
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Reglas para la colección de notas
+    match /notes/{noteId} {
+      // Los usuarios solo pueden leer y escribir sus propias notas
+      allow read, write: if request.auth != null 
+        && request.auth.uid == resource.data.userId;
+      
+      // Permitir crear notas si el usuario está autenticado
+      // y el userId coincide con el uid del usuario autenticado
+      allow create: if request.auth != null 
+        && request.auth.uid == request.resource.data.userId
+        && request.resource.data.title is string
+        && request.resource.data.content is string
+        && request.resource.data.createdAt is timestamp;
+    }
+    
+    // Reglas para datos de usuario (opcional - para futuras implementaciones)
+    match /users/{userId} {
+      allow read, write: if request.auth != null 
+        && request.auth.uid == userId;
+    }
+    
+    // Denegar todo lo demás
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

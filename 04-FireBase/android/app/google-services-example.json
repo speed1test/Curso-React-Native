@@ -1,0 +1,40 @@
+{
+  "_comment": "Archivo de configuración de Firebase para Android. Este archivo debe ser reemplazado por el google-services.json real que descargas desde Firebase Console. INSTRUCCIONES: 1. Ve a https://console.firebase.google.com 2. Crea un nuevo proyecto o selecciona uno existente 3. Agrega una app Android 4. Usa el package name: com.firebase04 (debe coincidir con tu build.gradle) 5. Descarga el archivo google-services.json 6. Colócalo en android/app/google-services.json 7. Elimina este archivo de ejemplo",
+  "project_info": {
+    "project_number": "123456789",
+    "project_id": "tu-proyecto-firebase",
+    "storage_bucket": "tu-proyecto-firebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:123456789:android:abcdef123456",
+        "android_client_info": {
+          "package_name": "com.firebase04"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "123456789-abcdef.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "tu-api-key-aqui"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "123456789-abcdef.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

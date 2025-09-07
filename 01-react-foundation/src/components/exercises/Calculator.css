@@ -1,0 +1,199 @@
+.calculator-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+
+.calculator-container h2 {
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.calculator-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+.calculator {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.calculator-display {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.display-text {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  font-family: 'Courier New', monospace;
+  word-break: break-all;
+  text-align: right;
+}
+
+.operation-indicator {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: 'Courier New', monospace;
+  margin-bottom: 0.5rem;
+}
+
+.calculator-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  grid-template-areas:
+    "clear percent sqrt square"
+    "seven eight nine divide"
+    "four five six multiply"
+    "one two three subtract"
+    "zero zero dot add"
+    "equals equals equals equals";
+}
+
+.calculator-btn {
+  height: 60px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.calculator-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.calculator-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.calculator-btn-wide {
+  grid-column: span 2;
+}
+
+.calculator-btn-tall {
+  grid-row: span 2;
+  grid-area: equals;
+}
+
+/* Posicionamiento específico de botones */
+.calculator-buttons button:nth-child(17) {
+  grid-area: zero;
+}
+
+.calculator-buttons button:nth-child(19) {
+  grid-area: equals;
+}
+
+.calculator-history {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.calculator-history h3 {
+  color: #ffffff;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.history-content {
+  max-height: 400px;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.history-item {
+  color: #ffffff;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  border-left: 3px solid #007bff;
+}
+
+.history-content p {
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  margin: 0;
+}
+
+/* Colores específicos para diferentes tipos de botones */
+.btn-light {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+.btn-warning {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.btn-success {
+  background-color: #28a745;
+  color: #ffffff;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: #ffffff;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .calculator-layout {
+    grid-template-columns: 1fr;
+  }
+  
+  .calculator-buttons {
+    grid-template-areas:
+      "clear percent sqrt square"
+      "seven eight nine divide"
+      "four five six multiply"
+      "one two three subtract"
+      "zero zero dot add"
+      "equals equals equals equals";
+  }
+  
+  .display-text {
+    font-size: 2rem;
+  }
+  
+  .calculator-btn {
+    height: 50px;
+    font-size: 1rem;
+  }
+}
